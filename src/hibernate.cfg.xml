@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.connection.driver_class">org.sqlite.JDBC</property>
+    <property name="hibernate.connection.url">jdbc:sqlite:dbpg.db</property>
+    <property name="hibernate.connection.username">dbpg</property>
+    <property name="hibernate.connection.password">dbpg</property>
+    <property name="hibernate.dialect">org.hibernate.dialect.SQLiteDialect</property>
+    <property name="hibernate.hbm2ddl.auto">create-drop</property>
+    <mapping class="com.dborisenko.math.optimization.Solver"/>
+    <mapping class="com.dborisenko.math.optimization.linear.LinearSolver"/>
+    <mapping class="com.dborisenko.math.optimization.linear.LexDualSimplexSolver"/>
+    <mapping class="com.dborisenko.math.optimization.linear.integer.GomoryFirstSolver"/>
+    <mapping class="com.dborisenko.math.optimization.linear.integer.IntegerLinearSolver"/>
+    <mapping class="com.dborisenko.math.optimization.problems.metadata.SetPackingProblemMetadata"/>
+    <mapping class="com.dborisenko.math.optimization.problems.metadata.ProblemMetadata"/>
+    <mapping class="com.dborisenko.math.optimization.problems.resolvers.ProblemResolver"/>
+    <mapping class="com.dborisenko.math.optimization.problems.SetPackingProblem"/>
+    <mapping class="com.dborisenko.math.optimization.problems.Problem"/>
+    <mapping class="com.dborisenko.math.optimization.problems.LinearProblem"/>
+    <mapping class="com.dborisenko.math.optimization.problems.solutions.ProblemSolution"/>
+    <mapping class="com.dborisenko.math.optimization.linear.integer.DynamicProgrammingSolver"/>
+    <mapping class="com.dborisenko.math.optimization.problems.session.ProblemsSession"/>
+    <mapping class="com.dborisenko.math.optimization.linear.integer.LClassesExhaustionSolver"/>
+  </session-factory>
+</hibernate-configuration>
